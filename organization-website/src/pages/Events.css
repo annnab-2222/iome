@@ -1,0 +1,35 @@
+.events-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.events-list {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 2rem;
+}
+
+.event-item {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.event-item h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.event-item p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.event-item span {
+  display: block;
+  color: #888;
+  font-size: 0.9rem;
+}
