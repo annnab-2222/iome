@@ -7,12 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+# Ignore all node_modules in subdirectories
+**/node_modules/
+**/node_modules/**
+
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Editor directories and file
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -22,3 +25,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
