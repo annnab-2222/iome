@@ -1,31 +1,24 @@
-import { useState, FormEvent } from 'react';
-import { useNavigate, Navigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { UserCircle, Lock } from 'lucide-react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext'; // Import the AuthContext
 
-const Login = () => {
+const LoginComponent = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  
-  const { login, isAuthenticated } = useAuth();
+
+  const { login } = useAuth(); // Use the login function from AuthContext
   const navigate = useNavigate();
 
-  // If already logged in, redirect to dashboard
-  if (isAuthenticated) {
-    return <Navigate to="/dashboard" />;
-  }
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     setError('');
     setIsLoading(true);
-    
+
     try {
-      const success = await login(username, password);
+      const success = await login(username, password); // Call the login function from AuthContext
       if (success) {
-        navigate('/dashboard');
+        navigate('/dashboard'); // Redirect to the dashboard on successful login
       } else {
         setError('Invalid username or password');
       }
@@ -36,79 +29,120 @@ const Login = () => {
     }
   };
 
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Use username: <span className="font-medium text-blue-600">admin</span> and password: <span className="font-medium text-blue-600">password</span>
-          </p>
-        </div>
-        
-        {error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-            {error}
-          </div>
-        )}
-        
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label htmlFor="username" className="sr-only">Username</label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <UserCircle className="h-5 w-5 text-gray-400" />
-                </div>
-                <input
-                  id="username"
-                  name="username"
-                  type="text"
-                  autoComplete="username"
-                  required
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                  placeholder="Username"
-                />
-              </div>
-            </div>
-            <div>
-              <label htmlFor="password" className="sr-only">Password</label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-gray-400" />
-                </div>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                  placeholder="Password"
-                />
-              </div>
-            </div>
-          </div>
+  // Inline styles for the futuristic glowing effect
+  const styles = {
+    container: {
+      display: 'flex',
+      flexDirection: 'column' as React.CSSProperties['flexDirection'],
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+      background: 'linear-gradient(120deg, #2980b9, #8e44ad)',
+      color: '#fff',
+      fontFamily: "'Poppins', sans-serif",
+    } as React.CSSProperties,
+    title: {
+      fontSize: '2.5rem',
+      marginBottom: '1.5rem',
+      textShadow: '0 0 10px #00ffcc, 0 0 20px #00ffcc',
+    } as React.CSSProperties,
+    inputContainer: {
+      position: 'relative',
+      marginBottom: '1.5rem',
+    } as React.CSSProperties,
+    input: {
+      width: '300px',
+      padding: '10px 15px',
+      border: '2px solid #00ffcc',
+      borderRadius: '5px',
+      background: 'transparent',
+      color: '#fff',
+      fontSize: '1rem',
+      outline: 'none',
+      transition: '0.3s',
+    } as React.CSSProperties,
+    label: {
+      position: 'absolute',
+      top: '50%',
+      left: '15px',
+      transform: 'translateY(-50%)',
+      color: '#00ffcc',
+      pointerEvents: 'none',
+      transition: '0.3s',
+    } as React.CSSProperties,
+    labelActive: {
+      top: '-10px',
+      left: '10px',
+      fontSize: '0.8rem',
+      color: '#00ffcc',
+    } as React.CSSProperties,
+    button: {
+      width: '300px',
+      padding: '10px 15px',
+      border: 'none',
+      borderRadius: '5px',
+      background: 'linear-gradient(90deg, #00ffcc, #0066ff)',
+      color: '#fff',
+      fontSize: '1rem',
+      cursor: 'pointer',
+      transition: '0.3s',
+    } as React.CSSProperties,
+    buttonHover: {
+      boxShadow: '0 0 10px #00ffcc, 0 0 40px #00ffcc',
+    } as React.CSSProperties,
+    error: {
+      color: '#ff4d4d',
+      marginBottom: '1rem',
+    } as React.CSSProperties,
+  };
 
-          <div>
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              {isLoading ? 'Signing in...' : 'Sign in'}
-            </button>
-          </div>
-        </form>
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.title}>Login</h1>
+      {error && <p style={styles.error}>{error}</p>}
+      <div style={styles.inputContainer}>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          style={styles.input}
+        />
+        <label
+          style={{
+            ...styles.label,
+            ...(username ? styles.labelActive : {}),
+          }}
+        >
+          Username
+        </label>
       </div>
+      <div style={styles.inputContainer}>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          style={styles.input}
+        />
+        <label
+          style={{
+            ...styles.label,
+            ...(password ? styles.labelActive : {}),
+          }}
+        >
+          Password
+        </label>
+      </div>
+      <button
+        onClick={handleSubmit}
+        disabled={isLoading}
+        style={styles.button}
+        onMouseEnter={(e) => (e.currentTarget.style.boxShadow = styles.buttonHover.boxShadow || '')}
+        onMouseLeave={(e) => (e.currentTarget.style.boxShadow = 'none')}
+      >
+        {isLoading ? 'Logging in...' : 'Login'}
+      </button>
     </div>
   );
 };
 
-export default Login;
+export default LoginComponent;

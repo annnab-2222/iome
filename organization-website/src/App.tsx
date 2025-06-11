@@ -7,7 +7,6 @@ import { AuthProvider } from './contexts/AuthContext';
 import Skills from './pages/Skills';
 import Events from './pages/Events';
 import Contact from './pages/Contact';
-import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Students from './pages/Students';
 import Payment from './pages/Payment';
@@ -25,7 +24,6 @@ function App() {
             <Routes>
               {/* Public routes */}
               <Route path="/" element={<Landing />} />
-              <Route path="/home" element={<Home />} />
               <Route path="/events" element={<Events />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="/contact" element={<Contact />} />

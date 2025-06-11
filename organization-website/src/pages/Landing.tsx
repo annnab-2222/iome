@@ -3,17 +3,17 @@ import { ArrowRight, CheckCircle, Users, BookOpen, Award, ChevronRight } from 'l
 
 const Landing = () => {
   const features = [
-    { 
+    {
       title: "Comprehensive Skill Development",
       description: "From computer basics to advanced design and development, our courses cover a wide range of technical skills.",
       icon: <BookOpen className="h-6 w-6 text-blue-600" />
     },
-    { 
+    {
       title: "Expert Instructors",
       description: "Learn from industry professionals with years of practical experience in their respective fields.",
       icon: <Users className="h-6 w-6 text-blue-600" />
     },
-    { 
+    {
       title: "Recognized Certification",
       description: "Earn certificates that are valued by employers across the industry and boost your career prospects.",
       icon: <Award className="h-6 w-6 text-blue-600" />
@@ -47,17 +47,17 @@ const Landing = () => {
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Empowering Lives Through Technical Skills</h1>
               <p className="text-xl mb-8 text-blue-100">
-                SkillHub Academy provides practical, hands-on training in digital and technical skills to help you thrive in today's job market.
+                IOME INNOVATION provides practical, hands-on training in digital and technical skills to help you thrive in today's job market.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/skills" 
+                <Link
+                  to="/skills"
                   className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
                 >
                   Explore Courses
                 </Link>
-                <Link 
-                  to="/login" 
+                <Link
+                  to="/login"
                   className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
                 >
                   Student Login
@@ -65,9 +65,9 @@ const Landing = () => {
               </div>
             </div>
             <div className="hidden md:block">
-              <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80" 
-                alt="Students learning" 
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80"
+                alt="Students learning"
                 className="rounded-lg shadow-xl"
               />
             </div>
@@ -99,7 +99,7 @@ const Landing = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Choose SkillHub Academy?</h2>
+            <h2 className="text-3xl font-bold mb-4">Why Choose IOME INNOVATION?</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               We're committed to providing quality education that prepares you for real-world success.
             </p>
@@ -131,48 +131,45 @@ const Landing = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:-translate-y-1 hover:shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
-                alt="Graphic Design" 
+              <img
+                src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+                alt="Graphic Design"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Graphic Design</h3>
                 <p className="text-gray-600 mb-4">Master the tools and techniques of modern graphic design with our comprehensive course.</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-blue-600 font-medium">KES 45,000</span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">12 Weeks</span>
+                  <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">2 Months</span>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:-translate-y-1 hover:shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
-                alt="Web Development" 
+              <img
+                src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+                alt="Web Development"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Web Development</h3>
-                <p className="text-gray-600 mb-4">Learn to build modern, responsive websites with HTML, CSS, JavaScript and popular frameworks.</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-blue-600 font-medium">KES 60,000</span>
-                  <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">16 Weeks</span>
+                <h3 className="text-xl font-semibold mb-2">Computer Package</h3>
+                <p className="text-gray-600 mb-4">Learn to build modern, Office Suite, Antivirus Package, Operating System (OS) Package.</p>
+                <div className="flex justify-end items-center">
+                  <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">3 Months</span>
                 </div>
               </div>
             </div>
 
             <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:-translate-y-1 hover:shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
-                alt="Digital Marketing" 
+              <img
+                src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+                alt="Computer Package"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Digital Marketing</h3>
                 <p className="text-gray-600 mb-4">Develop skills in SEO, social media marketing, and digital advertising campaigns.</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-blue-600 font-medium">KES 35,000</span>
                   <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">8 Weeks</span>
                 </div>
               </div>
@@ -215,17 +212,17 @@ const Landing = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of students who have transformed their careers with SkillHub Academy.
+            Join thousands of students who have transformed their careers with Iome Inovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
             >
               Contact Us
             </Link>
-            <Link 
-              to="/skills" 
+            <Link
+              to="/skills"
               className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
               Browse Courses
