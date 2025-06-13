@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Users, BookOpen, Award, ChevronRight } from 'lucide-react';
+import { ArrowRight, Users, BookOpen, Award, ChevronRight } from 'lucide-react';
+import { ThemeProvider } from '../contexts/ThemeContext';
 
 const Landing = () => {
   const features = [
@@ -39,6 +40,7 @@ const Landing = () => {
   ];
 
   return (
+    <ThemeProvider>
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white">
@@ -282,6 +284,7 @@ const Landing = () => {
         </div>
       </section>
     </div>
+    </ThemeProvider>
   );
 };
 

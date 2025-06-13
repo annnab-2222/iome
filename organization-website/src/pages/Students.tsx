@@ -1,5 +1,6 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
-import { Search, Filter, Download, UserPlus, Edit, Trash2, ChevronDown } from 'lucide-react';
+import { useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
+import { Search, Filter, Download, UserPlus, Edit, Trash2 } from 'lucide-react';
 
 interface Student {
   id: string;
