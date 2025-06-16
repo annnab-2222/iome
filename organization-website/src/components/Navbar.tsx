@@ -33,17 +33,12 @@ const Navbar = () => {
   );
 
   return (
-    <nav className={`
-      bg-light-surface dark:bg-dark-surface
-      text-light-text dark:text-dark-text
-      border-b border-light-muted/20 dark:border-dark-muted/20
-      transition-all duration-300 ease-in-out py-4
-    `}>
-      <div className="container mx-auto px-4 flex justify-between items-center">
+    <nav className="navbar">
+      <div className="nav-container">
         <div className="flex items-center">
           <NavLink 
             to="/" 
-            className="text-xl font-bold text-light-primary dark:text-dark-primary hover:opacity-80 transition-opacity"
+            className="text-xl font-bold text-primary hover:opacity-80 transition-opacity"
           >
             SkillHub
           </NavLink>
@@ -51,7 +46,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-6">
           {/* Navigation links */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6 nav-links">
             {/* Show Home and Contact when not logged in */}
             {!isAuthenticated && unauthenticatedLinks.map((link) => (
               <NavLink 
@@ -59,8 +54,8 @@ const Navbar = () => {
                 to={link.path}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-light-primary dark:text-dark-primary font-medium"
-                    : "text-light-muted dark:text-dark-muted hover:text-light-primary dark:hover:text-dark-primary transition-colors"
+                    ? "nav-link active"
+                    : "nav-link"
                 }
               >
                 {link.label}
@@ -74,8 +69,8 @@ const Navbar = () => {
                 to={link.path}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-light-primary dark:text-dark-primary font-medium"
-                    : "text-light-muted dark:text-dark-muted hover:text-light-primary dark:hover:text-dark-primary transition-colors"
+                    ? "nav-link active"
+                    : "nav-link"
                 }
               >
                 {link.label}
@@ -89,8 +84,8 @@ const Navbar = () => {
                 to={link.path}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-light-primary dark:text-dark-primary font-medium flex items-center"
-                    : "text-light-muted dark:text-dark-muted hover:text-light-primary dark:hover:text-dark-primary flex items-center transition-colors"
+                    ? "nav-link active flex items-center"
+                    : "nav-link flex items-center"
                 }
               >
                 {link.icon && link.icon}
@@ -102,13 +97,13 @@ const Navbar = () => {
           {/* Theme toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-light-muted/10 dark:hover:bg-dark-muted/10 transition-colors"
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             aria-label="Toggle theme"
           >
             {isDarkMode ? (
               <Sun className="w-5 h-5 text-yellow-300" />
             ) : (
-              <Moon className="w-5 h-5 text-dark-surface" />
+              <Moon className="w-5 h-5" />
             )}
           </button>
 
@@ -116,7 +111,7 @@ const Navbar = () => {
           {isAuthenticated ? (
             <div className="flex items-center gap-4">
               {user && (
-                <div className="flex items-center text-light-muted dark:text-dark-muted">
+                <div className="flex items-center">
                   <User size={16} className="mr-1" />
                   <span className="text-sm">{user.name}</span>
                 </div>
@@ -134,8 +129,8 @@ const Navbar = () => {
               to="/login"
               className={({ isActive }) =>
                 isActive
-                  ? "px-4 py-2 bg-light-primary/90 dark:bg-dark-primary/90 text-white rounded-md font-medium"
-                  : "px-4 py-2 bg-light-primary dark:bg-dark-primary text-white rounded-md hover:opacity-90 transition-opacity"
+                  ? "px-4 py-2 bg-primary/90 text-white rounded-md font-medium"
+                  : "px-4 py-2 bg-primary text-white rounded-md hover:opacity-90 transition-opacity"
               }
             >
               Login

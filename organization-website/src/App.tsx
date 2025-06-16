@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Login from './pages/Login';
@@ -22,35 +23,37 @@ function App() {
       <AuthProvider>
         <Router>
           <div className="min-h-screen flex flex-col bg-gray-50">
-            <Navbar />
+            
             <main className="flex-1">
-              <Routes>
-                {/* Public routes */}
-                <Route path="/" element={<Landing />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/skills" element={<Skills />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/login" element={<Login />} />
-                
-                {/* Protected Routes */}
-                <Route path="/dashboard" element={
-                  <ProtectedRoute>
-                    <Dashboard />
-                  </ProtectedRoute>
-                } />
-                <Route path="/students" element={
-                  <ProtectedRoute>
-                    <Students />
-                  </ProtectedRoute>
-                } />
-                <Route path="/payment" element={
-                  <ProtectedRoute>
-                    <Payment />
-                  </ProtectedRoute>
-                } />
-                
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <Layout>
+                <Routes>
+                  {/* Public routes */}
+                  <Route path="/" element={<Landing />} />
+                  <Route path="/events" element={<Events />} />
+                  <Route path="/skills" element={<Skills />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/login" element={<Login />} />
+                  
+                  {/* Protected Routes */}
+                  <Route path="/dashboard" element={
+                    <ProtectedRoute>
+                      <Dashboard />
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/students" element={
+                    <ProtectedRoute>
+                      <Students />
+                    </ProtectedRoute>
+                  } />
+                  <Route path="/payment" element={
+                    <ProtectedRoute>
+                      <Payment />
+                    </ProtectedRoute>
+                  } />
+                  
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Layout>
             </main>
             <Footer />
           </div>

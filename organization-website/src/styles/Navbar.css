@@ -1,6 +1,9 @@
 .navbar {
   padding: 1rem;
-  background-color: #f8f9fa;
+  background-color: rgb(var(--color-surface));
+  border-bottom: 1px solid rgba(var(--color-muted), 0.2);
+  transition: background-color var(--color-transition-speed) ease,
+              border-color var(--color-transition-speed) ease;
 }
 
 .nav-container {
@@ -20,7 +23,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #333;
+  color: rgb(var(--color-text));
   font-weight: bold;
   font-size: 1.5rem;
 }
@@ -37,16 +40,18 @@
 
 .nav-link {
   text-decoration: none;
-  color: #333;
+  color: rgb(var(--color-text));
   padding: 0.5rem 1rem;
   border-radius: 4px;
+  transition: background-color var(--color-transition-speed) ease,
+              color var(--color-transition-speed) ease;
 }
 
 .nav-link:hover {
-  background-color: #e9ecef;
+  background-color: rgba(var(--color-muted), 0.1);
 }
 
 .active {
-  background-color: #0d6efd;
+  background-color: rgb(var(--color-primary));
   color: white;
 }
