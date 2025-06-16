@@ -14,22 +14,22 @@
 .event-item {
   padding: 1.5rem;
   border-radius: 8px;
-  background-color: #f8f9fa;
+  background-color: rgb(var(--color-surface));
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .event-item h2 {
-  color: #333;
+  color: rgb(var(--color-text));
   margin-bottom: 1rem;
 }
 
 .event-item p {
-  color: #666;
+  color: rgba(var(--color-text), 0.8);
   margin-bottom: 1rem;
 }
 
 .event-item span {
   display: block;
-  color: #888;
+  color: rgba(var(--color-text), 0.6);
   font-size: 0.9rem;
 }
